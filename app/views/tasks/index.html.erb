@@ -1,0 +1,17 @@
+
+    <h1>Tasks</h1>
+    <ul>
+      <% @tasks.each do |task| %>
+        <li>
+          <%= check_box("tag", task.id, {checked: task.done}) %>
+          <%= link_to(task.title, task_path(id: task.id)) %>
+          <%= link_to((fa_icon "pencil"), task_path(id: task.id)) %>
+          <%= link_to((fa_icon "times"), task_path(id: task.id)) %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= form_for(Task.new) do |f| %>
+      <%= f.text_field :title, placeholder: "New task" %>
+    <% end %>
+
