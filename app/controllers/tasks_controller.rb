@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def show          # GET /restaurants/:id
+  def show
   end
 
   def new           # GET /restaurants/new
